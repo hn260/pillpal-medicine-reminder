@@ -1,8 +1,16 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
+// ✅ Define the structure of a medicine row
+type Medicine = {
+  id: string | number;
+  medicineName: string;
+  dose: string;
+  time: string;
+};
+
 function App() {
-  const [medicines, setMedicines] = useState([]);
+  const [medicines, setMedicines] = useState<Medicine[]>([]);
   const [name, setName] = useState('');
   const [dose, setDose] = useState('');
   const [time, setTime] = useState('');
@@ -17,7 +25,12 @@ function App() {
       headers: { 'xc-auth': apiKey }
     })
       .then(res => res.json())
-      .then(data => setMedicines(data.list || []));
+      .then(data => {
+        if (data.list) {
+          // Cast list into Medicine[]
+          setMedicines(data.list as Medicine[]);
+        }
+      });
   }, []);
 
   // ✅ Add a new medicine
@@ -37,7 +50,7 @@ function App() {
       }),
     })
       .then(res => res.json())
-      .then(data => {
+      .then((data: Medicine) => {
         setMedicines([...medicines, data]);
         setName('');
         setDose('');
@@ -46,7 +59,7 @@ function App() {
   };
 
   // ✅ Delete a medicine
-  const deleteMedicine = (id) => {
+  const deleteMedicine = (id: string | number) => {
     fetch(`${apiUrl}/${id}`, {
       method: 'DELETE',
       headers: { 'xc-auth': apiKey }
