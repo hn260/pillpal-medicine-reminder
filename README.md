@@ -1,69 +1,71 @@
-# React + TypeScript + Vite
+💊 PillPal — Medicine Reminder Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PillPal is a lightweight web app that helps you schedule and track your medicines with ease. Built with React + TypeScript and powered by a free NocoDB backend, it lets you add, view, and delete medicine reminders anytime.
 
-Currently, two official plugins are available:
+🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Add medicines with name, dose, and time
 
-## Expanding the ESLint configuration
+View a clean schedule of all medicines
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Delete medicines once no longer needed
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Backend powered by NocoDB (free & no-code database)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Simple, responsive UI built with React + CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🛠️ Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Frontend: React (TypeScript)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Backend: NocoDB API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Hosting: Vercel (Frontend) / NocoDB Cloud (Backend)
+
+📂 Project Structure
+PillPal/
+ ├── src/
+ │   ├── App.tsx      # Main React component
+ │   ├── App.css      # Styles
+ │   └── index.tsx    # Entry point
+ ├── package.json
+ └── README.md
+
+⚡ Setup & Run Locally
+
+Clone the repo:
+
+git clone https://github.com/your-username/pillpal.git
+cd pillpal
+
+
+Install dependencies:
+
+npm install
+
+
+Add your NocoDB API URL and API Key in App.tsx:
+
+const apiUrl = "https://app.nocodb.com/api/v2/tables/xxxx/records";
+const apiKey = "your-nocodb-api-key";
+
+
+Start the dev server:
+
+npm run dev
+
+🌍 Deployment
+
+Frontend → Deploy on Vercel
+ (Free)
+
+Backend → Hosted automatically on NocoDB Cloud
+
+📸 Preview
+
+<img width="1919" height="964" alt="image" src="https://github.com/user-attachments/assets/bc75bf23-14be-48ca-b001-cd654b25b998" />
+
+
+👩‍💻 Author
+
+Made with ❤️ for medicine reminders.
