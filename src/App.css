@@ -1,0 +1,107 @@
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #d1e8ff, #f8dfff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.app-container {
+  background: white;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  padding: 24px 32px;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: #34495e;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: border 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #6c5ce7;
+}
+
+button {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #5a4dd1;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li span {
+  font-size: 15px;
+  color: #2d3436;
+}
+
+li button {
+  background: #ff7675;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+li button:hover {
+  background: #d63031;
+}
